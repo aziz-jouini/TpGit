@@ -1,0 +1,90 @@
+
+
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-9 mx-auto text-center">
+          <h1 class="text-white">Sign Up</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <form  [formGroup]="signupForm">
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="firstName"  placeholder="First Name">
+              <div *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].dirty || signupForm.controls['firstName'].touched ) " class="text-danger">
+
+                <div *ngIf="signupForm.controls['firstName'].errors?.['minlength']">
+                  first Name min len 3
+                </div>
+
+                <div *ngIf="signupForm.controls['firstName'].errors?.['required']">
+                  first Name is Req * 
+                </div>
+ 
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+              <div *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].dirty || signupForm.controls['lastName'].touched ) " class="text-danger">
+
+                <div *ngIf="signupForm.controls['lastName'].errors?.['minlength']">
+                  first Name min len 3
+                </div>
+
+                <div *ngIf="signupForm.controls['lastName'].errors?.['required']">
+                  first Name is Req * 
+                </div>
+ 
+              </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" formControlName="email"  placeholder="Email">
+                <div *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched ) " class="text-danger">
+
+                  <div *ngIf="signupForm.controls['email'].errors?.['email']">
+                    email invalid
+                  </div>
+  
+                  <div *ngIf="signupForm.controls['email'].errors?.['required']">
+                    first Name is Req * 
+                  </div>
+   
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="password" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="confirmPwd" placeholder="Confirm Pwd">
+                <div *ngIf="signupForm.controls['confirmPwd'].invalid && (signupForm.controls['confirmPwd'].dirty || signupForm.controls['confirmPwd'].touched ) " class="text-danger">
+
+                  <div *ngIf="signupForm.controls['confirmPwd'].errors?.['mustMatch']">
+                    confirmPwd 
+                  </div>
+  
+   
+                </div>
+              </div>
+          
+            <div class="form-group">
+              <button type="button" class="btn btn-primary py-3 px-5"  (click)="signup()" >Sign up </button>
+            </div>
+          </form>  
+        </div>
+      
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
